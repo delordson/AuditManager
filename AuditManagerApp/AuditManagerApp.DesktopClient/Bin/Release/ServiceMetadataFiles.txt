@@ -1,0 +1,12 @@
+AuditManagerApp.Server.Properties.Service.lsml
+AuditManagerApp.Server.Properties.DataSources.ApplicationData.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.Audits.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.AuditTypes.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.AuditStatuses.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.Auditors.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.Employees.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.AuditAuditors.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.AuditFindings.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.FindingActions.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.MyAuditFindingActions.lsml
+AuditManagerApp.Server.DataSources.ApplicationData.MyAssignedAuditFindings.lsml

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="ApplicationData" StorageEntityContainer="ApplicationDataStore">
+    <EntitySetMapping Name="AuditAuditors">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AuditAuditor)">
+        <MappingFragment StoreEntitySet="AuditAuditors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AuditAuditor_Audit" ColumnName="AuditAuditor_Audit" />
+          <ScalarProperty Name="AuditAuditor_Auditor" ColumnName="AuditAuditor_Auditor" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditFindings">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AuditFinding)">
+        <MappingFragment StoreEntitySet="AuditFindings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FindingReference" ColumnName="FindingReference" />
+          <ScalarProperty Name="FindingDescription" ColumnName="FindingDescription" />
+          <ScalarProperty Name="FindingDate" ColumnName="FindingDate" />
+          <ScalarProperty Name="TargetResolutionDate" ColumnName="TargetResolutionDate" />
+          <ScalarProperty Name="FindingImpactAssessment" ColumnName="FindingImpactAssessment" />
+          <ScalarProperty Name="ImmediateAction" ColumnName="ImmediateAction" />
+          <ScalarProperty Name="CorrectiveAndPreventativeAction" ColumnName="CorrectiveAndPreventativeAction" />
+          <ScalarProperty Name="CorrectiveAndPreventativeActionTargetDate" ColumnName="CorrectiveAndPreventativeActionTargetDate" />
+          <ScalarProperty Name="DateCorrectiveAndPreventativeActionClosed" ColumnName="DateCorrectiveAndPreventativeActionClosed" />
+          <ScalarProperty Name="DateFindingClosed" ColumnName="DateFindingClosed" />
+          <ScalarProperty Name="AuditFinding_Employee" ColumnName="AuditFinding_Employee" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="AuditFinding_Audit" ColumnName="AuditFinding_Audit" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Auditors">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Auditor)">
+        <MappingFragment StoreEntitySet="Auditors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateTrained" ColumnName="DateTrained" />
+          <ScalarProperty Name="CurrentAuditor" ColumnName="CurrentAuditor" />
+          <ScalarProperty Name="Auditor_Employee" ColumnName="Auditor_Employee" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audits">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Audit)">
+        <MappingFragment StoreEntitySet="Audits">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AuditCode" ColumnName="AuditCode" />
+          <ScalarProperty Name="AuditDescription" ColumnName="AuditDescription" />
+          <ScalarProperty Name="SchduledDate" ColumnName="SchduledDate" />
+          <ScalarProperty Name="DateStarted" ColumnName="DateStarted" />
+          <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+          <ScalarProperty Name="AuditType_Audit" ColumnName="AuditType_Audit" />
+          <ScalarProperty Name="AuditStatus_Audit" ColumnName="AuditStatus_Audit" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditStatuses">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AuditStatus)">
+        <MappingFragment StoreEntitySet="AuditStatuses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AuditStatusDescription" ColumnName="AuditStatusDescription" />
+          <ScalarProperty Name="InUse" ColumnName="InUse" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AuditType)">
+        <MappingFragment StoreEntitySet="AuditTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AuditTypeDescription" ColumnName="AuditTypeDescription" />
+          <ScalarProperty Name="inUse" ColumnName="inUse" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Current" ColumnName="Current" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FindingActions">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.FindingAction)">
+        <MappingFragment StoreEntitySet="FindingActions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="ActionComment" ColumnName="ActionComment" />
+          <ScalarProperty Name="DateActionAssigned" ColumnName="DateActionAssigned" />
+          <ScalarProperty Name="ActionTargetCompletionDate" ColumnName="ActionTargetCompletionDate" />
+          <ScalarProperty Name="DateActionCompleted" ColumnName="DateActionCompleted" />
+          <ScalarProperty Name="IssueAction_Employee" ColumnName="IssueAction_Employee" />
+          <ScalarProperty Name="IssueAction_AuditFinding" ColumnName="IssueAction_AuditFinding" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

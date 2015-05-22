@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Properties\Client.lsml" Checksum="8B062CEB75AB1A9A2B287495FE88389760AC5792EC716DE75A036CF232C22F76" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Properties\Proxies.lsml" Checksum="48E89DE7256EF2D631D196508B4FA2BE2012E9426581D6D53239599952A0A3CF" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\AddEditAudit.lsml" Checksum="F8E39607397D0E0A691E8D952270308EA8BFCC1363CC63775E743479AA7826D2" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\AddEditAuditAuditor.lsml" Checksum="A6065F9931DFB8B89401F96068B445DA6F04768A68CE4A1D268D34ADC0528C59" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\AddEditAuditFinding.lsml" Checksum="6DF2539A9519234D93A708C747AE548876501152FC2CD9CEC9BDC85F6D277B16" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\AddEditAuditor.lsml" Checksum="D77E008BA45F09755409BD75ED1C60C06A6B7F0A2EA1FE7AB9F9220CE3936459" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\AddEditAuditStatus.lsml" Checksum="70B75469A21CF181056A427C23B9714B9A8C5F23C71089A50D2816766859F7B1" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\AddEditAuditType.lsml" Checksum="3F672C8D3D4B6AC15AED2E4C4FB53E4AB0000C82FC3BAB7E5546B004BC2B4268" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\AddEditEmployee.lsml" Checksum="F2802C3E844F3001263FD534177B5B885B825E5D9549BCF3FFEC627D420EC061" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\AddEditFindingAction.lsml" Checksum="F8CF1DC90C941172DA215E2B786D8947A8FB7104DB2205443120BA9F2810DE2C" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\BrowseAllAuditFindings.lsml" Checksum="E118ECD27FEC340BE608EE517E78EC8A92CEA6A72FC2D6EE143B765166E665D1" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\BrowseAuditors.lsml" Checksum="1052B36538B624594D417127D94E4A817E9B4CEB05B6C94D3F445DC72E7BE759" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\BrowseAudits.lsml" Checksum="B2B9089F2BA6509C67309053E4A21683273F6967677E8FED65BC1D4463D4C3A7" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\BrowseAuditStatuses.lsml" Checksum="CE1D6A3A17020648366F04AB945854FD9144B2513C03DEEE607D37B11E5DB7EE" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\BrowseAuditTypes.lsml" Checksum="CC1B6CE49A071F93FE47C975DA07628511053208E864ADD22AF7C350C81C66F5" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\BrowseEmployees.lsml" Checksum="8B0CFCFD411F096310818A9054F7EC636F56B8A201590B77FD4C9746FE505A7A" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\BrowseMyAssignedAuditFindings.lsml" Checksum="477D8A011BB77E7F4E32ACCEEEEFC3AE7443A77111B6649507B5CAD7A7CE60A3" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\BrowseMyAuditFindingActions.lsml" Checksum="99BB4508C4AAACEF37C17E28FA1DA6F7E6320824EE610F53FE63603710F9EA82" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\Home.lsml" Checksum="851CB384CCC3119DEF273AC09117AFF4F05F2ABD16668BE14F9FF2DC14EA0F59" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\MobileHome.lsml" Checksum="C72F1F55FB9AB8401BF7FEA0A662C0B617EA2AD054EEE595BB00669E9A8A65AE" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\MobileSettings.lsml" Checksum="F6D0388898DC4F5A7EEA139EBFFA170033BBEEF19F84CA36DB7CFE38FBBD4E63" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\Screens\Settings.lsml" Checksum="A2F93DA3251293B962CA8573F4F97CD0EBAAB5800479A87052FD1AF8527FE872" />
+  </Documents>
+</ModelDocumentManifest>

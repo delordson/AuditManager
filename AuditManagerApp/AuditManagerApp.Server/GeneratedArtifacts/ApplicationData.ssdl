@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="AuditAuditors" EntityType="ApplicationDataStore.AuditAuditor" store:Type="Tables" Schema="dbo" Table="AuditAuditors" />
+    <EntitySet Name="AuditFindings" EntityType="ApplicationDataStore.AuditFinding" store:Type="Tables" Schema="dbo" Table="AuditFindings" />
+    <EntitySet Name="Auditors" EntityType="ApplicationDataStore.Auditor" store:Type="Tables" Schema="dbo" Table="Auditors" />
+    <EntitySet Name="Audits" EntityType="ApplicationDataStore.Audit" store:Type="Tables" Schema="dbo" Table="Audits" />
+    <EntitySet Name="AuditStatuses" EntityType="ApplicationDataStore.AuditStatus" store:Type="Tables" Schema="dbo" Table="AuditStatuses" />
+    <EntitySet Name="AuditTypes" EntityType="ApplicationDataStore.AuditType" store:Type="Tables" Schema="dbo" Table="AuditTypes" />
+    <EntitySet Name="Employees" EntityType="ApplicationDataStore.Employee" store:Type="Tables" Schema="dbo" Table="Employees" />
+    <EntitySet Name="FindingActions" EntityType="ApplicationDataStore.FindingAction" store:Type="Tables" Schema="dbo" Table="FindingActions" />
+    <AssociationSet Name="FindingAction_AuditFinding" Association="ApplicationDataStore.FindingAction_AuditFinding">
+      <End Role="AuditFinding" EntitySet="AuditFindings" />
+      <End Role="FindingAction" EntitySet="FindingActions" />
+    </AssociationSet>
+    <AssociationSet Name="AuditAuditor_Auditor" Association="ApplicationDataStore.AuditAuditor_Auditor">
+      <End Role="Auditor" EntitySet="Auditors" />
+      <End Role="AuditAuditor" EntitySet="AuditAuditors" />
+    </AssociationSet>
+    <AssociationSet Name="AuditAuditor_Audit" Association="ApplicationDataStore.AuditAuditor_Audit">
+      <End Role="Audit" EntitySet="Audits" />
+      <End Role="AuditAuditor" EntitySet="AuditAuditors" />
+    </AssociationSet>
+    <AssociationSet Name="AuditFinding_Audit" Association="ApplicationDataStore.AuditFinding_Audit">
+      <End Role="Audit" EntitySet="Audits" />
+      <End Role="AuditFinding" EntitySet="AuditFindings" />
+    </AssociationSet>
+    <AssociationSet Name="AuditStatus_Audit" Association="ApplicationDataStore.AuditStatus_Audit">
+      <End Role="AuditStatus" EntitySet="AuditStatuses" />
+      <End Role="Audit" EntitySet="Audits" />
+    </AssociationSet>
+    <AssociationSet Name="AuditType_Audit" Association="ApplicationDataStore.AuditType_Audit">
+      <End Role="AuditType" EntitySet="AuditTypes" />
+      <End Role="Audit" EntitySet="Audits" />
+    </AssociationSet>
+    <AssociationSet Name="Auditor_Employee" Association="ApplicationDataStore.Auditor_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Auditor" EntitySet="Auditors" />
+    </AssociationSet>
+    <AssociationSet Name="AuditFinding_Employee" Association="ApplicationDataStore.AuditFinding_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="AuditFinding" EntitySet="AuditFindings" />
+    </AssociationSet>
+    <AssociationSet Name="FindingAction_Employee" Association="ApplicationDataStore.FindingAction_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="FindingAction" EntitySet="FindingActions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AuditAuditor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="AuditAuditor_Auditor" Type="int" Nullable="false" />
+    <Property Name="AuditAuditor_Audit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuditFinding">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FindingReference" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FindingDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FindingDate" Type="datetime" Nullable="false" />
+    <Property Name="TargetResolutionDate" Type="datetime" Nullable="false" />
+    <Property Name="FindingImpactAssessment" Type="nvarchar(max)" />
+    <Property Name="ImmediateAction" Type="nvarchar(max)" />
+    <Property Name="CorrectiveAndPreventativeAction" Type="nvarchar(max)" />
+    <Property Name="CorrectiveAndPreventativeActionTargetDate" Type="datetime" />
+    <Property Name="DateCorrectiveAndPreventativeActionClosed" Type="datetime" />
+    <Property Name="DateFindingClosed" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="AuditFinding_Audit" Type="int" />
+    <Property Name="AuditFinding_Employee" Type="int" />
+  </EntityType>
+  <EntityType Name="Auditor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DateTrained" Type="datetime" />
+    <Property Name="CurrentAuditor" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Auditor_Employee" Type="int" />
+  </EntityType>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuditCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="AuditDescription" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="SchduledDate" Type="datetime" Nullable="false" />
+    <Property Name="DateStarted" Type="datetime" />
+    <Property Name="DateCompleted" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="AuditStatus_Audit" Type="int" Nullable="false" />
+    <Property Name="AuditType_Audit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuditStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuditStatusDescription" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="InUse" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="AuditType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuditTypeDescription" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="inUse" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="75">
+      <UniqueIndexAnnotation xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </Property>
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Current" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="FindingAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Action" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ActionComment" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateActionAssigned" Type="datetime" />
+    <Property Name="ActionTargetCompletionDate" Type="datetime" />
+    <Property Name="DateActionCompleted" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="IssueAction_AuditFinding" Type="int" Nullable="false" />
+    <Property Name="IssueAction_Employee" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FindingAction_AuditFinding">
+    <End Role="AuditFinding" Type="ApplicationDataStore.AuditFinding" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FindingAction" Type="ApplicationDataStore.FindingAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditFinding">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FindingAction">
+        <PropertyRef Name="IssueAction_AuditFinding" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditAuditor_Auditor">
+    <End Role="Auditor" Type="ApplicationDataStore.Auditor" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="AuditAuditor" Type="ApplicationDataStore.AuditAuditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Auditor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditAuditor">
+        <PropertyRef Name="AuditAuditor_Auditor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditAuditor_Audit">
+    <End Role="Audit" Type="ApplicationDataStore.Audit" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="AuditAuditor" Type="ApplicationDataStore.AuditAuditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Audit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditAuditor">
+        <PropertyRef Name="AuditAuditor_Audit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditFinding_Audit">
+    <End Role="Audit" Type="ApplicationDataStore.Audit" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="AuditFinding" Type="ApplicationDataStore.AuditFinding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Audit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditFinding">
+        <PropertyRef Name="AuditFinding_Audit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditStatus_Audit">
+    <End Role="AuditStatus" Type="ApplicationDataStore.AuditStatus" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Audit" Type="ApplicationDataStore.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="AuditStatus_Audit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditType_Audit">
+    <End Role="AuditType" Type="ApplicationDataStore.AuditType" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Audit" Type="ApplicationDataStore.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="AuditType_Audit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Auditor_Employee">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Auditor" Type="ApplicationDataStore.Auditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Auditor">
+        <PropertyRef Name="Auditor_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditFinding_Employee">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="AuditFinding" Type="ApplicationDataStore.AuditFinding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditFinding">
+        <PropertyRef Name="AuditFinding_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FindingAction_Employee">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="FindingAction" Type="ApplicationDataStore.FindingAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FindingAction">
+        <PropertyRef Name="IssueAction_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="AuditAuditor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditAuditor_Audit" Type="Edm.Int32" Nullable="false" />
+    <Property Name="AuditAuditor_Auditor" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Audit" Relationship="LightSwitchApplication.AuditAuditor_Audit" ToRole="Audit" FromRole="AuditAuditor" />
+    <NavigationProperty Name="Auditor" Relationship="LightSwitchApplication.AuditAuditor_Auditor" ToRole="Auditor" FromRole="AuditAuditor" />
+  </EntityType>
+  <EntityType Name="AuditFinding">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FindingReference" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="FindingDescription" Type="Edm.String" Nullable="false" MaxLength="Max" />
+    <Property Name="FindingDate" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="TargetResolutionDate" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="FindingImpactAssessment" Type="Edm.String" MaxLength="Max" />
+    <Property Name="ImmediateAction" Type="Edm.String" MaxLength="Max" />
+    <Property Name="CorrectiveAndPreventativeAction" Type="Edm.String" MaxLength="Max" />
+    <Property Name="CorrectiveAndPreventativeActionTargetDate" Type="Edm.DateTime" />
+    <Property Name="DateCorrectiveAndPreventativeActionClosed" Type="Edm.DateTime" />
+    <Property Name="DateFindingClosed" Type="Edm.DateTime" />
+    <Property Name="AuditFinding_Employee" Type="Edm.Int32" />
+    <Property Name="Notes" Type="Edm.String" MaxLength="Max" />
+    <Property Name="AuditFinding_Audit" Type="Edm.Int32" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="AssignedTo" Relationship="LightSwitchApplication.AuditFinding_Employee" ToRole="Employee" FromRole="AuditFinding" />
+    <NavigationProperty Name="FindingAction" Relationship="LightSwitchApplication.FindingAction_AuditFinding" ToRole="FindingAction" FromRole="AuditFinding" />
+    <NavigationProperty Name="Audit" Relationship="LightSwitchApplication.AuditFinding_Audit" ToRole="Audit" FromRole="AuditFinding" />
+  </EntityType>
+  <EntityType Name="Auditor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateTrained" Type="Edm.DateTime" />
+    <Property Name="CurrentAuditor" Type="Edm.Boolean" Nullable="false" />
+    <Property Name="Auditor_Employee" Type="Edm.Int32" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Employee" Relationship="LightSwitchApplication.Auditor_Employee" ToRole="Employee" FromRole="Auditor" />
+    <NavigationProperty Name="AuditAuditors" Relationship="LightSwitchApplication.AuditAuditor_Auditor" ToRole="AuditAuditor" FromRole="Auditor" />
+  </EntityType>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditCode" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="AuditDescription" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="SchduledDate" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="DateStarted" Type="Edm.DateTime" />
+    <Property Name="DateCompleted" Type="Edm.DateTime" />
+    <Property Name="AuditType_Audit" Type="Edm.Int32" Nullable="false" />
+    <Property Name="AuditStatus_Audit" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="AuditType" Relationship="LightSwitchApplication.AuditType_Audit" ToRole="AuditType" FromRole="Audit" />
+    <NavigationProperty Name="AuditStatus" Relationship="LightSwitchApplication.AuditStatus_Audit" ToRole="AuditStatus" FromRole="Audit" />
+    <NavigationProperty Name="AuditAuditors" Relationship="LightSwitchApplication.AuditAuditor_Audit" ToRole="AuditAuditor" FromRole="Audit" />
+    <NavigationProperty Name="AuditFindings" Relationship="LightSwitchApplication.AuditFinding_Audit" ToRole="AuditFinding" FromRole="Audit" />
+  </EntityType>
+  <EntityType Name="AuditStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditStatusDescription" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="InUse" Type="Edm.Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Audits" Relationship="LightSwitchApplication.AuditStatus_Audit" ToRole="Audit" FromRole="AuditStatus" />
+  </EntityType>
+  <EntityType Name="AuditType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditTypeDescription" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="inUse" Type="Edm.Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Audits" Relationship="LightSwitchApplication.AuditType_Audit" ToRole="Audit" FromRole="AuditType" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="75" />
+    <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="75" />
+    <Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="75" />
+    <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Current" Type="Edm.Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Auditors" Relationship="LightSwitchApplication.Auditor_Employee" ToRole="Auditor" FromRole="Employee" />
+    <NavigationProperty Name="AuditFindings" Relationship="LightSwitchApplication.AuditFinding_Employee" ToRole="AuditFinding" FromRole="Employee" />
+    <NavigationProperty Name="FindingAction" Relationship="LightSwitchApplication.FindingAction_Employee" ToRole="FindingAction" FromRole="Employee" />
+  </EntityType>
+  <EntityType Name="FindingAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="Max" />
+    <Property Name="ActionComment" Type="Edm.String" MaxLength="255" />
+    <Property Name="DateActionAssigned" Type="Edm.DateTime" />
+    <Property Name="ActionTargetCompletionDate" Type="Edm.DateTime" />
+    <Property Name="DateActionCompleted" Type="Edm.DateTime" />
+    <Property Name="IssueAction_Employee" Type="Edm.Int32" Nullable="false" />
+    <Property Name="IssueAction_AuditFinding" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="AssignedTo" Relationship="LightSwitchApplication.FindingAction_Employee" ToRole="Employee" FromRole="FindingAction" />
+    <NavigationProperty Name="AuditFinding" Relationship="LightSwitchApplication.FindingAction_AuditFinding" ToRole="AuditFinding" FromRole="FindingAction" />
+  </EntityType>
+  <Association Name="FindingAction_AuditFinding">
+    <End Role="AuditFinding" Type="LightSwitchApplication.AuditFinding" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FindingAction" Type="LightSwitchApplication.FindingAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditFinding">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FindingAction">
+        <PropertyRef Name="IssueAction_AuditFinding" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditAuditor_Auditor">
+    <End Role="Auditor" Type="LightSwitchApplication.Auditor" Multiplicity="1" />
+    <End Role="AuditAuditor" Type="LightSwitchApplication.AuditAuditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Auditor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditAuditor">
+        <PropertyRef Name="AuditAuditor_Auditor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditAuditor_Audit">
+    <End Role="Audit" Type="LightSwitchApplication.Audit" Multiplicity="1" />
+    <End Role="AuditAuditor" Type="LightSwitchApplication.AuditAuditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Audit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditAuditor">
+        <PropertyRef Name="AuditAuditor_Audit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditFinding_Audit">
+    <End Role="Audit" Type="LightSwitchApplication.Audit" Multiplicity="0..1" />
+    <End Role="AuditFinding" Type="LightSwitchApplication.AuditFinding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Audit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditFinding">
+        <PropertyRef Name="AuditFinding_Audit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditStatus_Audit">
+    <End Role="AuditStatus" Type="LightSwitchApplication.AuditStatus" Multiplicity="1" />
+    <End Role="Audit" Type="LightSwitchApplication.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="AuditStatus_Audit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditType_Audit">
+    <End Role="AuditType" Type="LightSwitchApplication.AuditType" Multiplicity="1" />
+    <End Role="Audit" Type="LightSwitchApplication.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="AuditType_Audit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Auditor_Employee">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="0..1" />
+    <End Role="Auditor" Type="LightSwitchApplication.Auditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Auditor">
+        <PropertyRef Name="Auditor_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuditFinding_Employee">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="0..1" />
+    <End Role="AuditFinding" Type="LightSwitchApplication.AuditFinding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuditFinding">
+        <PropertyRef Name="AuditFinding_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FindingAction_Employee">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="1" />
+    <End Role="FindingAction" Type="LightSwitchApplication.FindingAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FindingAction">
+        <PropertyRef Name="IssueAction_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="AuditAuditors" EntityType="LightSwitchApplication.AuditAuditor" />
+    <EntitySet Name="AuditFindings" EntityType="LightSwitchApplication.AuditFinding" />
+    <EntitySet Name="Auditors" EntityType="LightSwitchApplication.Auditor" />
+    <EntitySet Name="Audits" EntityType="LightSwitchApplication.Audit" />
+    <EntitySet Name="AuditStatuses" EntityType="LightSwitchApplication.AuditStatus" />
+    <EntitySet Name="AuditTypes" EntityType="LightSwitchApplication.AuditType" />
+    <EntitySet Name="Employees" EntityType="LightSwitchApplication.Employee" />
+    <EntitySet Name="FindingActions" EntityType="LightSwitchApplication.FindingAction" />
+    <AssociationSet Name="FindingAction_AuditFinding" Association="LightSwitchApplication.FindingAction_AuditFinding">
+      <End Role="AuditFinding" EntitySet="AuditFindings" />
+      <End Role="FindingAction" EntitySet="FindingActions" />
+    </AssociationSet>
+    <AssociationSet Name="AuditAuditor_Auditor" Association="LightSwitchApplication.AuditAuditor_Auditor">
+      <End Role="Auditor" EntitySet="Auditors" />
+      <End Role="AuditAuditor" EntitySet="AuditAuditors" />
+    </AssociationSet>
+    <AssociationSet Name="AuditAuditor_Audit" Association="LightSwitchApplication.AuditAuditor_Audit">
+      <End Role="Audit" EntitySet="Audits" />
+      <End Role="AuditAuditor" EntitySet="AuditAuditors" />
+    </AssociationSet>
+    <AssociationSet Name="AuditFinding_Audit" Association="LightSwitchApplication.AuditFinding_Audit">
+      <End Role="Audit" EntitySet="Audits" />
+      <End Role="AuditFinding" EntitySet="AuditFindings" />
+    </AssociationSet>
+    <AssociationSet Name="AuditStatus_Audit" Association="LightSwitchApplication.AuditStatus_Audit">
+      <End Role="AuditStatus" EntitySet="AuditStatuses" />
+      <End Role="Audit" EntitySet="Audits" />
+    </AssociationSet>
+    <AssociationSet Name="AuditType_Audit" Association="LightSwitchApplication.AuditType_Audit">
+      <End Role="AuditType" EntitySet="AuditTypes" />
+      <End Role="Audit" EntitySet="Audits" />
+    </AssociationSet>
+    <AssociationSet Name="Auditor_Employee" Association="LightSwitchApplication.Auditor_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Auditor" EntitySet="Auditors" />
+    </AssociationSet>
+    <AssociationSet Name="AuditFinding_Employee" Association="LightSwitchApplication.AuditFinding_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="AuditFinding" EntitySet="AuditFindings" />
+    </AssociationSet>
+    <AssociationSet Name="FindingAction_Employee" Association="LightSwitchApplication.FindingAction_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="FindingAction" EntitySet="FindingActions" />
+    </AssociationSet>
+    <FunctionImport Name="MyAssignedAuditFindings" ReturnType="Collection(LightSwitchApplication.AuditFinding)" EntitySet="AuditFindings" m:HttpMethod="GET" />
+    <FunctionImport Name="MyAuditFindingActions" ReturnType="Collection(LightSwitchApplication.FindingAction)" EntitySet="FindingActions" m:HttpMethod="GET" />
+    <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
+      <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+  Name="LightSwitchApplication.AuditManagerApp.DesktopClient" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Application.Attributes>
+    <Partial />
+  </Application.Attributes>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditAuditor" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditFinding" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Auditor" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Audit" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditStatus" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditType" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Employee" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:FindingAction" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityContainer
+    Name="ApplicationData">
+    <EntityContainer.Attributes>
+      <Proxy
+        Target="ServiceInterface:ApplicationData" />
+    </EntityContainer.Attributes>
+  </EntityContainer>
+  <Association
+    Name="FindingAction_AuditFinding">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FindingAction_AuditFinding" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="AuditAuditor_Auditor">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditAuditor_Auditor" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="AuditAuditor_Audit">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditAuditor_Audit" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="AuditFinding_Audit">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditFinding_Audit" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="AuditStatus_Audit">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditStatus_Audit" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="AuditType_Audit">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditType_Audit" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="Auditor_Employee">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Auditor_Employee" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="AuditFinding_Employee">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:AuditFinding_Employee" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="FindingAction_Employee">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FindingAction_Employee" />
+    </Association.Attributes>
+  </Association>
+</Application>

@@ -1,0 +1,6 @@
+C:\Users\Delordson\Documents\Visual Studio 2013\Projects\AuditManagerApp\AuditManagerApp\AuditManagerApp.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\Users\Delordson\Documents\Visual Studio 2013\Projects\AuditManagerApp\AuditManagerApp\AuditManagerApp.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs
+C:\Users\Delordson\Documents\Visual Studio 2013\Projects\BitBucket\AuditManagerApp\AuditManagerApp\AuditManagerApp.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\Users\Delordson\Documents\Visual Studio 2013\Projects\BitBucket\AuditManagerApp\AuditManagerApp\AuditManagerApp.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs
+C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs

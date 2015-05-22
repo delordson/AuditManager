@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.DesktopClient\Properties\Client.lsml" Checksum="9CE55CDB79A9050AFFA3E5B976F62B6A25A6F6340C1AEEB846F07F135C2225B6" />
+    <Document FullPath="C:\Users\Delordson\Documents\GitHub\AuditManager\AuditManagerApp\AuditManagerApp.DesktopClient\Properties\Proxies.lsml" Checksum="D8DA3FF5D366604275569620512A849A21295DC74736040097820530A9A52771" />
+  </Documents>
+</ModelDocumentManifest>
