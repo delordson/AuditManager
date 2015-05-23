@@ -15,7 +15,7 @@ Access is controlled through a log in screen. The administrator uses an associat
 <h2>The Home Screen</h2>
 Access to all the features of the Audit Manager App is from the home page. From here, users can navigate to the ‘Manage Audits Module’, the ‘Manage Auditors Module’, the ‘All Audit Findings Module’, the ‘My Audit Findings Module’, the ‘My Finding Actions Module’ and the ‘Settings Module’.
 
-<a href="https://github.com/delordson/AuditManager/blob/master/Resources/screenshot_11052013_070514.png"><img class="alignnone size-large wp-image-1567" title="screenshot_11052013_070514" alt="" src="https://github.com/delordson/AuditManager/blob/master/Resources/screenshot_11052013_070514-1024x575.png" width="700" height="393" /></a>
+<a href="https://github.com/delordson/AuditManager/blob/master/Resources/screenshot_11052013_070514.png"><img class="alignnone size-large wp-image-1567" title="screenshot_11052013_070514" alt="" src="https://github.com/delordson/AuditManager/blob/master/Resources/screenshot_11052013_070514.png" width="700" height="393" /></a>
 
 &nbsp;
 <h2>Manage Audits</h2>
