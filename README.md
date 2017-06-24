@@ -89,7 +89,7 @@ The Immediate Action tab provides a place for the person the Finding is assigned
 
 &nbsp;
 
-The Further Actions tab is where additional steps which need to be take to resolve the issue are listed. These Further Actions can be assigned to other Employees.
+The Further Actions tab is where additional steps which need to be taken to resolve the issue are listed. These Further Actions can be assigned to other Employees.
 
 <a href="https://github.com/delordson/AuditManager/blob/master/Resources/screenshot_11052013_065347.png"><img class="alignnone size-large wp-image-1554" title="screenshot_11052013_065347" alt="" src="https://github.com/delordson/AuditManager/blob/master/Resources/screenshot_11052013_065347.png" width="700" height="393" /></a>
 
